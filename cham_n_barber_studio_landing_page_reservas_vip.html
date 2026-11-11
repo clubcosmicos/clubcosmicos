@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club Cosmicos Barber Studio | Cuidado Masculino Premium & Membresías VIP</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Playfair Display (Serif Elegante) & Plus Jakarta Sans (Sans Limpia) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        chaman: {
+                            navy: '#0B1325',
+                            dark: '#070C18',
+                            card: '#111A2E',
+                            gold: '#D4AF37',
+                            goldHover: '#C5A059',
+                            copper: '#E0A96D',
+                            slate: '#94A3B8'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #070C18;
+            color: #F8FAFC;
+        }
+
+        /* Gradient Text Effects */
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FCEEAC 0%, #D4AF37 50%, #997A15 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-border-glow {
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.08);
+        }
+
+        .gold-border-glow:hover {
+            border-color: rgba(212, 175, 55, 0.8);
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+        }
+
+        /* Glassmorphism Elements */
+        .glass-card {
+            background: rgba(17, 26, 46, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+        }
+
+        .glass-nav {
+            background: rgba(7, 12, 24, 0.9);
+            backdrop-filter: blur(16px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #070C18;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D4AF37;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden antialiased selection:bg-chaman-gold selection:text-chaman-dark">
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="fixed top-0 left-0 w-full z-50 glass-nav border-b border-white/10 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo Brand -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-full bg-gradient-to-br from-chaman-gold to-yellow-700 flex items-center justify-center p-0.5 shadow-lg shadow-chaman-gold/20">
+                        <div class="w-full h-full bg-chaman-dark rounded-full flex items-center justify-center">
+                            <i data-lucide="scissors" class="w-5 h-5 text-chaman-gold group-hover:rotate-45 transition-transform duration-300"></i>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-2xl font-black tracking-wider gold-gradient-text uppercase">Club Cosmicos</span>
+                        <span class="text-[9px] tracking-[0.25em] text-chaman-slate font-semibold uppercase -mt-1">Barber Studio</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#inicio" class="text-sm font-medium text-gray-300 hover:text-chaman-gold transition-colors">Inicio</a>
+                    <a href="#nosotros" class="text-sm font-medium text-gray-300 hover:text-chaman-gold transition-colors">Nosotros</a>
+                    <a href="#servicios" class="text-sm font-medium text-gray-300 hover:text-chaman-gold transition-colors">Servicios</a>
+                    <a href="#membresias" class="text-sm font-medium text-chaman-gold font-semibold flex items-center gap-1.5 hover:opacity-80">
+                        <i data-lucide="crown" class="w-4 h-4"></i> Membresías VIP
+                    </a>
+                    <a href="#giftcards" class="text-sm font-medium text-gray-300 hover:text-chaman-gold transition-colors flex items-center gap-1.5">
+                        <i data-lucide="gift" class="w-4 h-4 text-chaman-gold"></i> Tarjetas de Regalo
+                    </a>
+                    <a href="#galeria" class="text-sm font-medium text-gray-300 hover:text-chaman-gold transition-colors">Galería</a>
+                    <a href="#contacto" class="text-sm font-medium text-gray-300 hover:text-chaman-gold transition-colors">Ubicación</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="https://wa.me/573167986363?text=Hola%20CHAM%C3%81N%20Barber%20Studio,%20quiero%20reservar%20una%20cita." 
+                       target="_blank" 
+                       class="relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-bold text-chaman-dark bg-gradient-to-r from-chaman-gold via-yellow-400 to-chaman-goldHover hover:brightness-110 transition-all shadow-lg shadow-chaman-gold/25 transform hover:-translate-y-0.5">
+                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <span>Reservar Cita</span>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-chaman-gold p-2" aria-label="Abrir menú">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Navigation Panel -->
+        <div id="mobile-menu" class="hidden md:hidden glass-card border-b border-white/10 px-6 py-6 transition-all">
+            <div class="flex flex-col space-y-4">
+                <a href="#inicio" class="text-base font-medium text-gray-200 hover:text-chaman-gold mobile-link">Inicio</a>
+                <a href="#nosotros" class="text-base font-medium text-gray-200 hover:text-chaman-gold mobile-link">Nosotros</a>
+                <a href="#servicios" class="text-base font-medium text-gray-200 hover:text-chaman-gold mobile-link">Servicios</a>
+                <a href="#membresias" class="text-base font-semibold text-chaman-gold flex items-center gap-2 mobile-link">
+                    <i data-lucide="crown" class="w-4 h-4"></i> Membresías VIP (10% OFF)
+                </a>
+                <a href="#giftcards" class="text-base font-medium text-gray-200 hover:text-chaman-gold flex items-center gap-2 mobile-link">
+                    <i data-lucide="gift" class="w-4 h-4 text-chaman-gold"></i> Tarjetas de Regalo VIP
+                </a>
+                <a href="#galeria" class="text-base font-medium text-gray-200 hover:text-chaman-gold mobile-link">Galería & Experiencia</a>
+                <a href="#contacto" class="text-base font-medium text-gray-200 hover:text-chaman-gold mobile-link">Ubicación & Horarios</a>
+                <div class="pt-4 border-t border-white/10">
+                    <a href="https://wa.me/573167986363?text=Hola%20CHAM%C3%81N%20Barber%20Studio,%20quiero%20reservar%20una%20cita." 
+                       target="_blank" 
+                       class="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-full text-base font-bold text-chaman-dark bg-gradient-to-r from-chaman-gold to-yellow-500">
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                        <span>Reservar por WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+        <!-- Background Overlay Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=2000" 
+                 alt="Barbería de Lujo CHAMÁN" 
+                 class="w-full h-full object-cover object-center scale-105 filter brightness-50 opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-chaman-dark via-chaman-dark/80 to-chaman-navy/60"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-10">
+            <!-- Promo Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card border border-chaman-gold/40 mb-8 animate-pulse">
+                <span class="flex h-2 w-2 rounded-full bg-chaman-gold"></span>
+                <span class="text-xs uppercase tracking-wider text-chaman-gold font-bold">Membresías VIP con 10% OFF Activado</span>
+            </div>
+
+            <!-- Headline -->
+            <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                El Arte del Grooming Masculino en <span class="gold-gradient-text block mt-2">Club Cosmicos Barber Studio</span>
+            </h1>
+
+            <p class="max-w-2xl mx-auto text-lg sm:text-xl text-gray-300 font-light mb-10 leading-relaxed">
+                Una experiencia de corte, barba y estética de alta gama en Calasanz Ferrini, Medellín. Diseñada para el hombre contemporáneo que no acepta menos que la excelencia.
+            </p>
+
+            <!-- Dual CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-16">
+                <a href="https://wa.me/573167986363?text=Hola%20CHAM%C3%81N%20Barber%20Studio,%20deseo%20agendar%20mi%20cita%20de%20grooming." 
+                   target="_blank"
+                   class="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-chaman-dark bg-gradient-to-r from-chaman-gold to-yellow-500 hover:brightness-110 shadow-xl shadow-chaman-gold/20 flex items-center justify-center gap-3 transition-all transform hover:scale-105">
+                    <i data-lucide="message-circle" class="w-5 h-5 fill-current"></i>
+                    <span>Reservar Cita por WhatsApp</span>
+                </a>
+                
+                <a href="#membresias" 
+                   class="w-full sm:w-auto px-8 py-4 rounded-full font-bold text-white glass-card border border-chaman-gold/50 hover:bg-chaman-gold/10 flex items-center justify-center gap-3 transition-all">
+                    <i data-lucide="crown" class="w-5 h-5 text-chaman-gold"></i>
+                    <span>Ver Membresías VIP</span>
+                </a>
+            </div>
+
+            <!-- Highlights Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto border-t border-white/10 pt-8">
+                <div class="text-center p-3">
+                    <i data-lucide="scissors" class="w-6 h-6 text-chaman-gold mx-auto mb-2"></i>
+                    <h4 class="font-serif font-bold text-lg text-white">Estilo de Autor</h4>
+                    <p class="text-xs text-gray-400">Asesoría personalizada</p>
+                </div>
+                <div class="text-center p-3">
+                    <i data-lucide="coffee" class="w-6 h-6 text-chaman-gold mx-auto mb-2"></i>
+                    <h4 class="font-serif font-bold text-lg text-white">Barra Exclusive</h4>
+                    <p class="text-xs text-gray-400">Bebida de cortesía</p>
+                </div>
+                <div class="text-center p-3">
+                    <i data-lucide="shield-check" class="w-6 h-6 text-chaman-gold mx-auto mb-2"></i>
+                    <h4 class="font-serif font-bold text-lg text-white">Higiene Deluxe</h4>
+                    <p class="text-xs text-gray-400">Herramientas esterilizadas</p>
+                </div>
+                <div class="text-center p-3">
+                    <i data-lucide="clock" class="w-6 h-6 text-chaman-gold mx-auto mb-2"></i>
+                    <h4 class="font-serif font-bold text-lg text-white">Puntualidad</h4>
+                    <p class="text-xs text-gray-400">Tu tiempo vale</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= QUIÉNES SOMOS / FILOSOFÍA ================= -->
+    <section id="nosotros" class="py-24 bg-chaman-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- Left Image Composition -->
+                <div class="relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl gold-border-glow">
+                        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=1000" 
+                             alt="Interior Barberia Chaman" 
+                             class="w-full h-[480px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-chaman-dark via-transparent to-transparent"></div>
+                    </div>
+                    
+                    <!-- Overlay Card -->
+                    <div class="absolute -bottom-6 -right-6 hidden sm:flex items-center gap-4 glass-card p-5 rounded-2xl border border-chaman-gold/40 shadow-2xl max-w-xs">
+                        <div class="w-12 h-12 rounded-xl bg-chaman-gold/20 flex items-center justify-center text-chaman-gold">
+                            <i data-lucide="award" class="w-7 h-7"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-semibold uppercase tracking-wider text-chaman-gold">Experiencia 5 Estrellas</p>
+                            <p class="text-sm font-bold text-white">El Ritual Legendario de Grooming</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Narrative -->
+                <div>
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="w-8 h-[2px] bg-chaman-gold"></span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-chaman-gold">Filosofía & Concepto</span>
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-extrabold text-white mb-6 leading-tight">
+                        Más que un corte de cabello, un <span class="gold-gradient-text">ritual de renovación</span>.
+                    </h2>
+                    
+                    <p class="text-gray-300 text-base sm:text-lg mb-6 leading-relaxed font-light">
+                        En <strong class="text-white font-semibold">CHAMÁN Barber Studio</strong> entendemos que el cuidado personal es una declaración de carácter. Fusionamos la elegancia clásica del arte de la barbería tradicional con las últimas tendencias de visagismo y estilismo masculino.
+                    </p>
+                    
+                    <p class="text-gray-400 text-sm sm:text-base mb-8 leading-relaxed">
+                        Ubicados estratégicamente en el sector de <strong class="text-chaman-gold">Calasanz Ferrini (Medellín)</strong>, hemos creado un espacio de desconexión y confort donde cada detalle está diseñado para proyectar tu mejor versión.
+                    </p>
+
+                    <!-- Feature Bullet Points -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-chaman-gold/20 flex items-center justify-center text-chaman-gold mt-1 flex-shrink-0">
+                                <i data-lucide="check" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Atención Personalizada</h4>
+                                <p class="text-xs text-gray-400">Analizamos las facciones de tu rostro para recomendarte el estilo perfecto.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-6 h-6 rounded-full bg-chaman-gold/20 flex items-center justify-center text-chaman-gold mt-1 flex-shrink-0">
+                                <i data-lucide="check" class="w-4 h-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base">Toalla Caliente & Aceites Esenciales</h4>
+                                <p class="text-xs text-gray-400">Tratamiento térmico para abrir poros y lograr un afeitado ultrasuave.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://instagram.com/Chamanve" target="_blank" class="inline-flex items-center gap-2 text-chaman-gold font-bold hover:underline">
+                        <span>Descubre nuestra comunidad en Instagram @Chamanve</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SERVICIOS INDIVIDUALES ================= -->
+    <section id="servicios" class="py-24 bg-chaman-navy relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-chaman-gold">Menú de Experiencias</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-4">Servicios Individuales</h2>
+                <p class="text-gray-400 text-base">Servicios de precisión ejecutados por barberos master. Selecciona tu servicio y agenda directamente.</p>
+            </div>
+
+            <!-- Grid de Servicios -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Servicio 1 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 gold-border-glow group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-chaman-gold/10 flex items-center justify-center text-chaman-gold mb-6 group-hover:bg-chaman-gold group-hover:text-chaman-dark transition-colors">
+                            <i data-lucide="scissors" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Corte de Cabello</h3>
+                        <p class="text-xs text-gray-400 mb-6 leading-relaxed">Corte de precisión, perfilado de patillas, lavado capilar y peinado con cera mate de alta gama.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline justify-between border-t border-white/10 pt-4 mb-6">
+                            <span class="text-xs text-gray-400 uppercase">Precio</span>
+                            <span class="text-2xl font-extrabold text-chaman-gold">$25.000 <span class="text-xs text-gray-400">COP</span></span>
+                        </div>
+                        <a href="https://wa.me/573167986363?text=Hola%20CHAM%C3%81N%20Barber%20Studio,%20quiero%20reservar%20el%20servicio%20de%20Corte%20de%20Cabello%20($25.000)." 
+                           target="_blank"
+                           class="w-full py-3 rounded-xl bg-white/5 border border-chaman-gold/30 hover:bg-chaman-gold hover:text-chaman-dark text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
+                            <span>Reservar Servicio</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 gold-border-glow group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-chaman-gold/10 flex items-center justify-center text-chaman-gold mb-6 group-hover:bg-chaman-gold group-hover:text-chaman-dark transition-colors">
+                            <i data-lucide="user-check" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Combo Corte + Barba</h3>
+                        <p class="text-xs text-gray-400 mb-6 leading-relaxed">Corte completo y perfilado de barba con ritual de toalla caliente y aceites hidratantes.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline justify-between border-t border-white/10 pt-4 mb-6">
+                            <span class="text-xs text-gray-400 uppercase">Precio</span>
+                            <span class="text-2xl font-extrabold text-chaman-gold">$35.000 <span class="text-xs text-gray-400">COP</span></span>
+                        </div>
+                        <a href="https://wa.me/573167986363?text=Hola%20CHAM%C3%81N%20Barber%20Studio,%20quiero%20reservar%20el%20servicio%20de%20Corte%20%2B%20Barba%20($35.000)." 
+                           target="_blank"
+                           class="w-full py-3 rounded-xl bg-white/5 border border-chaman-gold/30 hover:bg-chaman-gold hover:text-chaman-dark text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
+                            <span>Reservar Servicio</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 gold-border-glow group">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-chaman-gold/10 flex items-center justify-center text-chaman-gold mb-6 group-hover:bg-chaman-gold group-hover:text-chaman-dark transition-colors">
+                            <i data-lucide="sparkles" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Diseño de Cejas</h3>
+                        <p class="text-xs text-gray-400 mb-6 leading-relaxed">Definición y limpieza con navaja y tijera para simetría facial masculina pulida.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline justify-between border-t border-white/10 pt-4 mb-6">
+                            <span class="text-xs text-gray-400 uppercase">Precio</span>
+                            <span class="text-2xl font-extrabold text-chaman-gold">$5.000 <span class="text-xs text-gray-400">COP</span></span>
+                        </div>
+                        <a href="https://wa.me/573167986363?text=Hola%20CHAM%C3%81N%20Barber%20Studio,%20quiero%20reservar%20el%20Dise%C3%B1o%20de%20Cejas%20($5.000)." 
+                           target="_blank"
+                           class="w-full py-3 rounded-xl bg-white/5 border border-chaman-gold/30 hover:bg-chaman-gold hover:text-chaman-dark text-white font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
+                            <span>Reservar Servicio</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 (Destacado) -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 border-2 border-chaman-gold relative shadow-2xl bg-chaman-card">
+                    <div class="absolute -top-3 right-4 bg-gradient-to-r from-chaman-gold to-yellow-600 text-chaman-dark font-extrabold text-[10px] uppercase px-3 py-1 rounded-full shadow">
+                        Más Solicitado
+                    </div>
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-chaman-gold flex items-center justify-center text-chaman-dark mb-6">
+                            <i data-lucide="crown" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-2">Ritual Completo</h3>
+                        <p class="text-xs text-gray-300 mb-6 leading-relaxed">Experiencia total: Corte de cabello + perfilado de barba con vapor ozono + diseño de cejas.</p>
+                    </div>
+                    <div>
+                        <div class="flex items-baseline justify-between border-t border-white/10 pt-4 mb-6">
+                            <span class="text-xs text-gray-400 uppercase">Precio</span>
+                            <span class="text-2xl font-extrabold gold-gradient-text">$40.000 <span class="text-xs text-gray-400">COP</span></span>
+                        </div>
+                        <a href="https://wa.me/573167986363?text=Hola%20CHAM%C3%81N%20Barber%20Studio,%20quiero%20reservar%20el%20Ritual%20Completo%20(Corte%20%2B%20Barba%20%2B%20Cejas%20por%20$40.000)." 
+                           target="_blank"
+                           class="w-full py-3 rounded-xl bg-gradient-to-r from-chaman-gold to-yellow-500 text-chaman-dark font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all shadow-lg shadow-chaman-gold/20 hover:brightness-110">
+                            <span>Reservar Ritual</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CALCULADORA INTERACTIVA DE MEMBRESÍAS VIP ================= -->
+    <section id="membresias" class="py-24 bg-chaman-dark relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none opacity-20">
+            <div class="absolute top-1/4 left-10 w-96 h-96 bg-chaman-gold/30 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-chaman-gold/10 border border-chaman-gold/30 text-chaman-gold text-xs font-extrabold uppercase tracking-widest mb-4">
+                    <i data-lucide="zap" class="w-4 h-4"></i> Club Exclusivo Chamán
+                </div>
+                <h2 class="font-serif text-3xl sm:text-5xl font-extrabold text-white mb-4">
+                    Calculadora de <span class="gold-gradient-text">Membresías VIP</span>
+                </h2>
+                <p class="text-gray-300 text-base sm:text-lg font-light">
+                    Asegura tu imagen impecable todo el mes con un <strong class="text-chaman-gold font-bold">10% de descuento directo</strong>. Selecciona la modalidad que mejor se adapte a tu estilo de vida.
+                </p>
+            </div>
+
+            <!-- Calculadora Widget Container -->
+            <div class="glass-card rounded-3xl p-6 sm:p-10 border border-chaman-gold/30 gold-border-glow max-w-4xl mx-auto">
+                
+                <!-- Paso 1: Selección de Servicio -->
+                <div class="mb-8">
+                    <label class="block text-xs uppercase tracking-widest font-bold text-chaman-gold mb-3">
+                        1. Selecciona tu plan de servicio:
+                    </label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="service-selector">
+                        <button type="button" data-service="corte" class="service-btn active px-4 py-3 rounded-xl border border-chaman-gold bg-chaman-gold text-chaman-dark font-bold text-xs sm:text-sm text-center transition-all">
+                            Corte
+                        </button>
+                        <button type="button" data-service="corte-barba" class="service-btn px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 hover:border-chaman-gold/50 font-bold text-xs sm:text-sm text-center transition-all">
+                            Corte + Barba
+                        </button>
+                        <button type="button" data-service="corte-cejas" class="service-btn px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 hover:border-chaman-gold/50 font-bold text-xs sm:text-sm text-center transition-all">
+                            Corte + Cejas
+                        </button>
+                        <button type="button" data-service="ritual" class="service-btn px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 hover:border-chaman-gold/50 font-bold text-xs sm:text-sm text-center transition-all">
+                            Ritual Completo
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Paso 2: Selección de Frecuencia Mensual -->
+                <div class="mb-10">
+                    <label class="block text-xs uppercase tracking-widest font-bold text-chaman-gold mb-3">
+                        2. Frecuencia de visitas al mes:
+                    </label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="freq-selector">
+                        <button type="button" data-freq="2" class="freq-btn px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 hover:border-chaman-gold/50 font-bold text-xs sm:text-sm text-center transition-all">
+                            2 Visitas / mes
+                        </button>
+                        <button type="button" data-freq="3" class="freq-btn px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 hover:border-chaman-gold/50 font-bold text-xs sm:text-sm text-center transition-all">
+                            3 Visitas / mes
+                        </button>
+                        <button type="button" data-freq="4" class="freq-btn active px-4 py-3 rounded-xl border border-chaman-gold bg-chaman-gold text-chaman-dark font-bold text-xs sm:text-sm text-center transition-all">
+                            4 Visitas / mes (Semanal)
+                        </button>
+                        <button type="button" data-freq="5" class="freq-btn px-4 py-3 rounded-xl border border-white/10 bg-white/5 text-gray-300 hover:border-chaman-gold/50 font-bold text-xs sm:text-sm text-center transition-all">
+                            5 Visitas / mes
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Live Price Calculation Result Card -->
+                <div class="bg-chaman-dark/90 rounded-2xl p-6 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="w-full md:w-auto text-center md:text-left">
+                        <div class="flex items-center justify-center md:justify-start gap-2 mb-1">
+                            <span class="text-xs uppercase text-gray-400 tracking-wider">Plan Elegido:</span>
+                            <span id="selected-summary-title" class="text-sm font-bold text-white">Corte (4x mes)</span>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start gap-3">
+                            <span id="original-price-display" class="text-lg text-gray-500 line-through">$100.000 COP</span>
+                            <span class="text-xs bg-emerald-500/20 text-emerald-400 font-extrabold px-2.5 py-0.5 rounded-full border border-emerald-500/30">10% OFF APLICADO</span>
+                        </div>
+                        <div class="mt-1">
+                            <span id="final-price-display" class="font-serif text-4xl sm:text-5xl font-black gold-gradient-text">$90.000</span>
+                            <span class="text-sm text-gray-400"> COP / mes</span>
+                        </div>
+                        <p id="unit-price-summary" class="text-xs text-chaman-gold mt-2 font-medium">Pagas solo $22.500 por cada visita</p>
+                    </div>
+
+                    <!-- Direct WhatsApp Activation Button -->
+                    <div class="w-full md:w-auto">
+                        <a id="membership-wa-btn" 
+                           href="#" 
+                           target="_blank" 
+                           class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-chaman-gold via-yellow-400 to-chaman-goldHover text-chaman-dark font-extrabold text-sm uppercase tracking-wider flex items-center justify-center gap-3 transition-all shadow-xl shadow-chaman-gold/20 hover:brightness-110">
+                            <i data-lucide="crown" class="w-5 h-5"></i>
+                            <span>Activar esta Membresía</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Matriz Resumen Transparente -->
+            <div class="mt-12 max-w-4xl mx-auto overflow-x-auto">
+                <table class="w-full text-left text-xs text-gray-300">
+                    <thead class="bg-chaman-navy text-chaman-gold uppercase font-serif tracking-wider border-b border-white/10">
+                        <tr>
+                            <th class="p-4">Modalidad</th>
+                            <th class="p-4">2x Mes (10% OFF)</th>
+                            <th class="p-4">3x Mes (10% OFF)</th>
+                            <th class="p-4 font-bold text-white">4x Mes (Popular)</th>
+                            <th class="p-4">5x Mes (VIP)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/5 bg-chaman-card/50">
+                        <tr>
+                            <td class="p-4 font-bold text-white">Corte</td>
+                            <td class="p-4">$45.000</td>
+                            <td class="p-4">$67.500</td>
+                            <td class="p-4 font-bold text-chaman-gold">$90.000</td>
+                            <td class="p-4">$112.500</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold text-white">Corte + Barba</td>
+                            <td class="p-4">$72.000</td>
+                            <td class="p-4">$108.000</td>
+                            <td class="p-4 font-bold text-chaman-gold">$144.000</td>
+                            <td class="p-4">$180.000</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold text-white">Corte + Cejas</td>
+                            <td class="p-4">$54.000</td>
+                            <td class="p-4">$81.000</td>
+                            <td class="p-4 font-bold text-chaman-gold">$108.000</td>
+                            <td class="p-4">$135.000</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 font-bold text-white">Ritual Completo</td>
+                            <td class="p-4">$81.000</td>
+                            <td class="p-4">$121.500</td>
+                            <td class="p-4 font-bold text-chaman-gold">$162.000</td>
+                            <td class="p-4">$202.500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= TARJETAS DE REGALO (GIFT CARDS VIP) ================= -->
+    <section id="giftcards" class="py-24 bg-chaman-navy relative border-t border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-chaman-gold/10 border border-chaman-gold/40 text-chaman-gold text-xs font-extrabold uppercase tracking-widest mb-4">
+                    <i data-lucide="gift" class="w-4 h-4"></i> El Regalo Perfecto
+                </div>
+                <h2 class="font-serif text-3xl sm:text-5xl font-extrabold text-white mb-4">
+                    Tarjetas de Regalo <span class="gold-gradient-text">Gift Card VIP</span>
+                </h2>
+                <p class="text-gray-300 text-base sm:text-lg font-light">
+                    Regala una experiencia inolvidable de cuidado personal. Todas nuestras tarjetas incluyen la membresía elegida con un <strong class="text-chaman-gold font-bold">10% de descuento de cortesía</strong> + un <strong class="text-white font-bold">Regalo Sorpresa Exclusivo</strong> para el agasajado.
+                </p>
+            </div>
+
+            <!-- Regalo Sorpresa Highlight Banner -->
+            <div class="glass-card rounded-2xl p-6 mb-12 border border-chaman-gold/50 bg-gradient-to-r from-chaman-card via-chaman-navy to-chaman-card gold-border-glow max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-4">
+                    <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-chaman-gold to-yellow-600 flex items-center justify-center text-chaman-dark shadow-lg shadow-chaman-gold/30 flex-shrink-0">
+                        <i data-lucide="sparkles" class="w-8 h-8 animate-spin-slow"></i>
+                    </div>
+                    <div>
+                        <span class="text-xs uppercase font-extrabold tracking-widest text-chaman-gold block mb-1">Cortesía Especial Incluida</span>
+                        <h3 class="font-serif text-xl font-bold text-white">Regalo Sorpresa de Bienvenida</h3>
+                        <p class="text-xs text-gray-300 mt-1">
+                            Tratamiento de Exfoliación Capilar Anti-stress + Hidratación Facial Térmica y Coctel / Bebida Premium de la Barra CHAMÁN para quien reciba la Gift Card.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex-shrink-0">
+                    <span class="inline-block text-xs font-bold text-chaman-dark bg-chaman-gold px-4 py-2 rounded-full uppercase tracking-wider">
+                        VALORADO EN $35.000 (¡GRATIS!)
+                    </span>
+                </div>
+            </div>
+
+            <!-- Grid de Tarjetas de Regalo por Membresía -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Gift Card 1: Membresía Corte -->
+                <div class="glass-card rounded-3xl p-6 border border-chaman-gold/30 gold-border-glow flex flex-col justify-between relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -right-12 -top-12 w-28 h-28 bg-chaman-gold/10 rounded-full blur-xl group-hover:bg-chaman-gold/20 transition-all"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-chaman-gold px-2.5 py-1 rounded-md bg-chaman-gold/10 border border-chaman-gold/30">Gift Card VIP</span>
+                            <i data-lucide="gift" class="w-5 h-5 text-chaman-gold"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-1">Membresía Corte</h3>
+                        <p class="text-xs text-chaman-gold mb-4 font-semibold">4 Visitas al mes (Semanal)</p>
+                        
+                        <div class="space-y-2 mb-6 border-t border-b border-white/10 py-4 text-xs text-gray-300">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-chaman-gold"></i>
+                                <span>4 Cortes de Cabello de Autor</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-chaman-gold"></i>
+                                <span>10% OFF en el plan activado</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-white font-bold">
+                                <i data-lucide="gift" class="w-4 h-4 text-chaman-gold"></i>
+                                <span>Regalo Sorpresa Exfoliante + Drink</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline justify-between mb-4">
+                            <div>
+                                <span class="text-xs text-gray-500 line-through">$100.000</span>
+                                <span class="text-2xl font-black text-chaman-gold block">$90.000 <span class="text-xs text-gray-400 font-normal">COP</span></span>
+                            </div>
+                            <span class="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded border border-emerald-500/30">10% OFF</span>
+                        </div>
+                        <a href="https://wa.me/573167986363?text=Hola%20CHAM%C3%81N%20Barber%20Studio!%20Deseo%20comprar%20una%20GIFT%20CARD%20de%20Membres%C3%ADa%20Corte%20(4x%20al%20mes)%20por%20$90.000%20COP%20con%20el%20Regalo%20Sorpresa%20incluido." 
+                           target="_blank"
+                           class="w-full py-3 rounded-xl bg-gradient-to-r from-chaman-gold to-yellow-500 text-chaman-dark font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all hover:brightness-110 shadow-lg shadow-chaman-gold/20">
+                            <i data-lucide="gift" class="w-4 h-4"></i>
+                            <span>Regalar esta Card</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Gift Card 2: Membresía Corte + Barba -->
+                <div class="glass-card rounded-3xl p-6 border border-chaman-gold/30 gold-border-glow flex flex-col justify-between relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -right-12 -top-12 w-28 h-28 bg-chaman-gold/10 rounded-full blur-xl group-hover:bg-chaman-gold/20 transition-all"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-chaman-gold px-2.5 py-1 rounded-md bg-chaman-gold/10 border border-chaman-gold/30">Gift Card VIP</span>
+                            <i data-lucide="gift" class="w-5 h-5 text-chaman-gold"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-1">Membresía Corte + Barba</h3>
+                        <p class="text-xs text-chaman-gold mb-4 font-semibold">4 Visitas al mes (Semanal)</p>
+                        
+                        <div class="space-y-2 mb-6 border-t border-b border-white/10 py-4 text-xs text-gray-300">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-chaman-gold"></i>
+                                <span>4 Combos Corte + Ritual de Barba</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-chaman-gold"></i>
+                                <span>10% OFF en el plan activado</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-white font-bold">
+                                <i data-lucide="gift" class="w-4 h-4 text-chaman-gold"></i>
+                                <span>Regalo Sorpresa Exfoliante + Drink</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline justify-between mb-4">
+                            <div>
+                                <span class="text-xs text-gray-500 line-through">$160.000</span>
+                                <span class="text-2xl font-black text-chaman-gold block">$144.000 <span class="text-xs text-gray-400 font-normal">COP</span></span>
+                            </div>
+                            <span class="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded border border-emerald-500/30">10% OFF</span>
+                        </div>
+                        <a href="https://wa.me/573167986363?text=Hola%20CHAM%C3%81N%20Barber%20Studio!%20Deseo%20comprar%20una%20GIFT%20CARD%20de%20Membres%C3%ADa%20Corte%20%2B%20Barba%20(4x%20al%20mes)%20por%20$144.000%20COP%20con%20el%20Regalo%20Sorpresa%20incluido." 
+                           target="_blank"
+                           class="w-full py-3 rounded-xl bg-gradient-to-r from-chaman-gold to-yellow-500 text-chaman-dark font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all hover:brightness-110 shadow-lg shadow-chaman-gold/20">
+                            <i data-lucide="gift" class="w-4 h-4"></i>
+                            <span>Regalar esta Card</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Gift Card 3: Membresía Corte + Cejas -->
+                <div class="glass-card rounded-3xl p-6 border border-chaman-gold/30 gold-border-glow flex flex-col justify-between relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300">
+                    <div class="absolute -right-12 -top-12 w-28 h-28 bg-chaman-gold/10 rounded-full blur-xl group-hover:bg-chaman-gold/20 transition-all"></div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-chaman-gold px-2.5 py-1 rounded-md bg-chaman-gold/10 border border-chaman-gold/30">Gift Card VIP</span>
+                            <i data-lucide="gift" class="w-5 h-5 text-chaman-gold"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-1">Membresía Corte + Cejas</h3>
+                        <p class="text-xs text-chaman-gold mb-4 font-semibold">4 Visitas al mes (Semanal)</p>
+                        
+                        <div class="space-y-2 mb-6 border-t border-b border-white/10 py-4 text-xs text-gray-300">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-chaman-gold"></i>
+                                <span>4 Cortes + Diseño de Cejas</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-chaman-gold"></i>
+                                <span>10% OFF en el plan activado</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-white font-bold">
+                                <i data-lucide="gift" class="w-4 h-4 text-chaman-gold"></i>
+                                <span>Regalo Sorpresa Exfoliante + Drink</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline justify-between mb-4">
+                            <div>
+                                <span class="text-xs text-gray-500 line-through">$120.000</span>
+                                <span class="text-2xl font-black text-chaman-gold block">$108.000 <span class="text-xs text-gray-400 font-normal">COP</span></span>
+                            </div>
+                            <span class="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded border border-emerald-500/30">10% OFF</span>
+                        </div>
+                        <a href="https://wa.me/573167986363?text=Hola%20CHAM%C3%81N%20Barber%20Studio!%20Deseo%20comprar%20una%20GIFT%20CARD%20de%20Membres%C3%ADa%20Corte%20%2B%20Cejas%20(4x%20al%20mes)%20por%20$108.000%20COP%20con%20el%20Regalo%20Sorpresa%20incluido." 
+                           target="_blank"
+                           class="w-full py-3 rounded-xl bg-gradient-to-r from-chaman-gold to-yellow-500 text-chaman-dark font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all hover:brightness-110 shadow-lg shadow-chaman-gold/20">
+                            <i data-lucide="gift" class="w-4 h-4"></i>
+                            <span>Regalar esta Card</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Gift Card 4: Membresía Ritual Completo (Destacada) -->
+                <div class="glass-card rounded-3xl p-6 border-2 border-chaman-gold shadow-2xl flex flex-col justify-between relative overflow-hidden group hover:-translate-y-2 transition-transform duration-300 bg-chaman-card">
+                    <div class="absolute -top-3 right-4 bg-gradient-to-r from-chaman-gold to-yellow-600 text-chaman-dark font-extrabold text-[10px] uppercase px-3 py-1 rounded-full shadow">
+                        Regalo Deluxe
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="text-[10px] font-extrabold uppercase tracking-widest text-chaman-dark bg-chaman-gold px-2.5 py-1 rounded-md">Gift Card Executive</span>
+                            <i data-lucide="crown" class="w-5 h-5 text-chaman-gold"></i>
+                        </div>
+                        <h3 class="font-serif text-xl font-bold text-white mb-1">Membresía Ritual Completo</h3>
+                        <p class="text-xs text-chaman-gold mb-4 font-semibold">4 Visitas al mes (Experiencia Total)</p>
+                        
+                        <div class="space-y-2 mb-6 border-t border-b border-white/10 py-4 text-xs text-gray-300">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-chaman-gold"></i>
+                                <span>4 Rituales (Corte + Barba + Cejas)</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-chaman-gold"></i>
+                                <span>10% OFF en el plan activado</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-white font-bold">
+                                <i data-lucide="sparkles" class="w-4 h-4 text-chaman-gold"></i>
+                                <span>Regalo Sorpresa Exfoliante + Coctel VIP</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-baseline justify-between mb-4">
+                            <div>
+                                <span class="text-xs text-gray-500 line-through">$180.000</span>
+                                <span class="text-2xl font-black gold-gradient-text block">$162.000 <span class="text-xs text-gray-400 font-normal">COP</span></span>
+                            </div>
+                            <span class="text-[10px] bg-emerald-500/20 text-emerald-400 font-bold px-2 py-0.5 rounded border border-emerald-500/30">10% OFF</span>
+                        </div>
+                        <a href="https://wa.me/573167986363?text=Hola%20CHAM%C3%81N%20Barber%20Studio!%20Deseo%20comprar%20la%20GIFT%20CARD%20VIP%20Membres%C3%ADa%20Ritual%20Completo%20(4x%20al%20mes)%20por%20$162.000%20COP%20con%20el%20Regalo%20Sorpresa%20incluido." 
+                           target="_blank"
+                           class="w-full py-3 rounded-xl bg-gradient-to-r from-chaman-gold via-yellow-400 to-chaman-goldHover text-chaman-dark font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all hover:brightness-110 shadow-lg shadow-chaman-gold/30">
+                            <i data-lucide="gift" class="w-4 h-4"></i>
+                            <span>Regalar Gift Card VIP</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Personalized Gift Message Banner -->
+            <div class="mt-12 text-center text-xs text-gray-400 flex items-center justify-center gap-2">
+                <i data-lucide="info" class="w-4 h-4 text-chaman-gold"></i>
+                <span>Las Tarjetas de Regalo se entregan en formato digital personalizado listo para enviar por WhatsApp o en sobre de lujo físico en la barbería.</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= GALERÍA DE CORTE & AMBIENTE ================= -->
+    <section id="galeria" class="py-24 bg-chaman-navy">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-bold uppercase tracking-widest text-chaman-gold">Galería de Trabajos</span>
+                <h2 class="font-serif text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-4">Estilo & Perfección</h2>
+                <p class="text-gray-400 text-base">Resultados reales en nuestros clientes. La precisión es nuestra firma.</p>
+            </div>
+
+            <!-- Image Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative group overflow-hidden rounded-2xl glass-card h-80 gold-border-glow">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80&w=800" 
+                         alt="Corte Fade Hombre" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-chaman-dark via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs text-chaman-gold font-bold uppercase tracking-wider">Skin Fade & Texture</span>
+                        <h4 class="font-serif text-lg font-bold text-white">Degradado de Alta Precisión</h4>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl glass-card h-80 gold-border-glow">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80&w=800" 
+                         alt="Perfilado de Barba" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-chaman-dark via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs text-chaman-gold font-bold uppercase tracking-wider">Beard Grooming</span>
+                        <h4 class="font-serif text-lg font-bold text-white">Perfilado de Barba Ritual</h4>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl glass-card h-80 gold-border-glow">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=800" 
+                         alt="Corte Ejecutivo Barberia" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-chaman-dark via-transparent to-transparent opacity-80"></div>
+                    <div class="absolute bottom-4 left-4 right-4">
+                        <span class="text-xs text-chaman-gold font-bold uppercase tracking-wider">Executive Style</span>
+                        <h4 class="font-serif text-lg font-bold text-white">Corte Clásico Ejecutivo</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TESTIMONIOS ================= -->
+    <section class="py-20 bg-chaman-dark border-t border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-chaman-gold">Clientes Satisfechos</span>
+                <h2 class="font-serif text-3xl font-extrabold text-white mt-1">La Opinión de Nuestra Comunidad</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex text-chaman-gold mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-6 font-light">"La atención en CHAMÁN es de otro nivel. El detalle con el que trabajan la barba y la toalla caliente hacen que valga cada peso. Tengo la membresía mensual de 4 cortes."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-chaman-gold/20 flex items-center justify-center font-bold text-chaman-gold">
+                            DA
+                        </div>
+                        <div>
+                            <h5 class="text-sm font-bold text-white">Daniel Arango</h5>
+                            <span class="text-xs text-gray-500">Cliente VIP Calasanz</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex text-chaman-gold mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-6 font-light">"Muy buena ubicación en la Calle 52. Siempre agendo por WhatsApp y respetan el horario al minuto. El combo de Corte + Barba es recomendado 100%."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-chaman-gold/20 flex items-center justify-center font-bold text-chaman-gold">
+                            CM
+                        </div>
+                        <div>
+                            <h5 class="text-sm font-bold text-white">Carlos Restrepo</h5>
+                            <span class="text-xs text-gray-500">Cliente Frecuente</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-2xl">
+                    <div class="flex text-chaman-gold mb-4">
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-6 font-light">"Excelente espacio, ambiente tranquilo y productos de calidad. Activar la membresía me ahorra dinero y aseguro mi cupo semanal."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-chaman-gold/20 flex items-center justify-center font-bold text-chaman-gold">
+                            SV
+                        </div>
+                        <div>
+                            <h5 class="text-sm font-bold text-white">Santiago Valencia</h5>
+                            <span class="text-xs text-gray-500">Suscriptor Membresía Ritual</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= UBICACIÓN & CONTACTO ================= -->
+    <section id="contacto" class="py-24 bg-chaman-navy relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Contact Info Card -->
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-chaman-gold">Visítanos en Medellín</span>
+                    <h2 class="font-serif text-3xl sm:text-5xl font-extrabold text-white mt-2 mb-8">Ubicación & Horarios</h2>
+
+                    <div class="space-y-6">
+                        <!-- Dirección -->
+                        <div class="glass-card p-5 rounded-2xl flex items-start gap-4 gold-border-glow">
+                            <div class="w-12 h-12 rounded-xl bg-chaman-gold/10 flex items-center justify-center text-chaman-gold flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base mb-1">Dirección Oficial</h4>
+                                <p class="text-gray-300 text-sm">Calle 52 #80-15, Calasanz Ferrini</p>
+                                <p class="text-gray-400 text-xs">Medellín, Antioquia, Colombia</p>
+                            </div>
+                        </div>
+
+                        <!-- Horarios -->
+                        <div class="glass-card p-5 rounded-2xl flex items-start gap-4 gold-border-glow">
+                            <div class="w-12 h-12 rounded-xl bg-chaman-gold/10 flex items-center justify-center text-chaman-gold flex-shrink-0">
+                                <i data-lucide="clock" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base mb-1">Horario de Atención</h4>
+                                <p class="text-gray-300 text-sm font-semibold">Lunes a Sábado: 9:00 AM – 9:00 PM</p>
+                                <p class="text-xs text-chaman-gold mt-1">Domingos y Festivos: Previa Reserva</p>
+                            </div>
+                        </div>
+
+                        <!-- WhatsApp Direct Link -->
+                        <div class="glass-card p-5 rounded-2xl flex items-start gap-4 gold-border-glow">
+                            <div class="w-12 h-12 rounded-xl bg-chaman-gold/10 flex items-center justify-center text-chaman-gold flex-shrink-0">
+                                <i data-lucide="phone-call" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white text-base mb-1">WhatsApp & Línea de Reservas</h4>
+                                <p class="text-gray-300 text-sm font-semibold">+57 316 798 6363</p>
+                                <p class="text-gray-400 text-xs">Instagram: @Chamanve</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                        <a href="https://maps.google.com/?q=Calle+52+%2380-15+Medellin+Calasanz+Ferrini" 
+                           target="_blank" 
+                           class="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i data-lucide="navigation" class="w-4 h-4 text-chaman-gold"></i>
+                            <span>Cómo llegar en Waze / Maps</span>
+                        </a>
+                        
+                        <a href="https://instagram.com/Chamanve" 
+                           target="_blank" 
+                           class="px-6 py-3.5 rounded-xl glass-card border border-chaman-gold/40 text-chaman-gold hover:bg-chaman-gold hover:text-chaman-dark font-bold text-sm flex items-center justify-center gap-2 transition-all">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                            <span>Síguenos @Chamanve</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Map Visual Container -->
+                <div class="glass-card rounded-3xl p-3 border border-chaman-gold/30 gold-border-glow overflow-hidden h-[420px]">
+                    <iframe 
+                        title="Ubicacion Chaman Barber Studio"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.082260645474!2d-75.6035!3d6.2528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44299ca48e24ab%3A0x892a01234567890!2sCl.%2052%20%2380-15%2C%20Medell%C3%ADn%2C%20Antioquia!5e0!3m2!1ses!2sco!4v1700000000000!5m2!1ses!2sco" 
+                        class="w-full h-full rounded-2xl filter contrast-125 brightness-90 grayscale" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-chaman-dark border-t border-white/10 pt-16 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                
+                <!-- Col 1: Brand -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-chaman-gold flex items-center justify-center text-chaman-dark font-black">
+                            <i data-lucide="scissors" class="w-5 h-5"></i>
+                        </div>
+                        <span class="font-serif text-2xl font-black gold-gradient-text uppercase">CHAMÁN</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-md mb-6">
+                        Estudio de barbería premium en Calasanz Ferrini, Medellín. Cuidado masculino de precisión, tratamiento de barba con toalla caliente y membresías VIP exclusivas.
+                    </p>
+                    <div class="flex items-center space-x-4">
+                        <a href="https://instagram.com/Chamanve" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-chaman-gold hover:bg-white/10 transition-all">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://wa.me/573167986363" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-chaman-gold hover:bg-white/10 transition-all">
+                            <i data-lucide="message-square" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Navigation Links -->
+                <div>
+                    <h4 class="font-serif text-base font-bold text-white mb-4 uppercase tracking-wider">Navegación</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#inicio" class="hover:text-chaman-gold transition-colors">Inicio</a></li>
+                        <li><a href="#nosotros" class="hover:text-chaman-gold transition-colors">Filosofía Chamán</a></li>
+                        <li><a href="#servicios" class="hover:text-chaman-gold transition-colors">Servicios Individuales</a></li>
+                        <li><a href="#membresias" class="hover:text-chaman-gold transition-colors">Membresías VIP (10% OFF)</a></li>
+                        <li><a href="#giftcards" class="hover:text-chaman-gold transition-colors">Tarjetas de Regalo VIP</a></li>
+                        <li><a href="#contacto" class="hover:text-chaman-gold transition-colors">Ubicación y Horarios</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Contact Summary -->
+                <div>
+                    <h4 class="font-serif text-base font-bold text-white mb-4 uppercase tracking-wider">Contacto</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="map-pin" class="w-4 h-4 text-chaman-gold"></i>
+                            <span>Calle 52 #80-15, Medellín</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="phone" class="w-4 h-4 text-chaman-gold"></i>
+                            <span>+57 316 798 6363</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i data-lucide="instagram" class="w-4 h-4 text-chaman-gold"></i>
+                            <span>@Chamanve</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+                <p>&copy; 2026 CHAMÁN Barber Studio (BarberStudioChaman.co). Todos los derechos reservados.</p>
+                <p class="mt-2 sm:mt-0">Diseñado con excelencia para grooming masculino de alto nivel.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= BOTÓN FLOTANTE WHATSAPP ================= -->
+    <a href="https://wa.me/573167986363?text=Hola%20CHAM%C3%81N%20Barber%20Studio,%20quiero%20reservar%20una%20cita." 
+       target="_blank" 
+       aria-label="Contactar por WhatsApp"
+       class="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-emerald-500 text-white flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 group">
+        <span class="absolute -inset-1 rounded-full bg-emerald-500 animate-ping opacity-30"></span>
+        <i data-lucide="message-circle" class="w-8 h-8 fill-current"></i>
+        <!-- Tooltip display on hover -->
+        <span class="absolute right-16 bg-chaman-dark text-white text-xs font-bold px-3 py-1.5 rounded-lg border border-white/10 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">
+            ¡Reserva por WhatsApp!
+        </span>
+    </a>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // ================= CALCULADORA DE MEMBRESÍAS VIP =================
+        const pricingMatrix = {
+            'corte': {
+                name: 'Corte de Cabello',
+                basePrice: 25000,
+                rates: { 2: 45000, 3: 67500, 4: 90000, 5: 112500 }
+            },
+            'corte-barba': {
+                name: 'Combo Corte + Barba',
+                basePrice: 35000,
+                rates: { 2: 72000, 3: 108000, 4: 144000, 5: 180000 }
+            },
+            'corte-cejas': {
+                name: 'Corte + Cejas',
+                basePrice: 30000,
+                rates: { 2: 54000, 3: 81000, 4: 108000, 5: 135000 }
+            },
+            'ritual': {
+                name: 'Ritual Completo (Corte + Barba + Cejas)',
+                basePrice: 40000,
+                rates: { 2: 81000, 3: 121500, 4: 162000, 5: 202500 }
+            }
+        };
+
+        let selectedServiceKey = 'corte';
+        let selectedFreqKey = 4;
+
+        const serviceBtns = document.querySelectorAll('.service-btn');
+        const freqBtns = document.querySelectorAll('.freq-btn');
+
+        const summaryTitle = document.getElementById('selected-summary-title');
+        const originalPriceDisplay = document.getElementById('original-price-display');
+        const finalPriceDisplay = document.getElementById('final-price-display');
+        const unitPriceSummary = document.getElementById('unit-price-summary');
+        const membershipWaBtn = document.getElementById('membership-wa-btn');
+
+        function formatCOP(amount) {
+            return '$' + amount.toLocaleString('es-CO');
+        }
+
+        function updateCalculator() {
+            const serviceData = pricingMatrix[selectedServiceKey];
+            const finalPrice = serviceData.rates[selectedFreqKey];
+            
+            // Calculate hypothetical original price without discount for comparison
+            let originalEstimate = 0;
+            if(selectedServiceKey === 'corte') originalEstimate = 25000 * selectedFreqKey;
+            else if(selectedServiceKey === 'corte-barba') originalEstimate = 40000 * selectedFreqKey; // value based on individual items
+            else if(selectedServiceKey === 'corte-cejas') originalEstimate = 30000 * selectedFreqKey;
+            else if(selectedServiceKey === 'ritual') originalEstimate = 45000 * selectedFreqKey;
+            
+            if (originalEstimate <= finalPrice) {
+                originalEstimate = Math.round(finalPrice / 0.9);
+            }
+
+            const unitPrice = Math.round(finalPrice / selectedFreqKey);
+
+            // Update DOM Elements
+            summaryTitle.textContent = `${serviceData.name} (${selectedFreqKey}x al mes)`;
+            originalPriceDisplay.textContent = `${formatCOP(originalEstimate)} COP`;
+            finalPriceDisplay.textContent = formatCOP(finalPrice);
+            unitPriceSummary.textContent = `Pagas solo ${formatCOP(unitPrice)} por cada visita`;
+
+            // Dynamic WhatsApp Link Generation
+            const message = `Hola CHAMÁN Barber Studio! Deseo activar la Membresía VIP: ${serviceData.name} de ${selectedFreqKey} visitas al mes con la tarifa especial de ${formatCOP(finalPrice)} COP (10% OFF). ¿Cuáles son los pasos para agendar?`;
+            const encodedMessage = encodeURIComponent(message);
+            membershipWaBtn.href = `https://wa.me/573167986363?text=${encodedMessage}`;
+        }
+
+        // Service Select Listeners
+        serviceBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                serviceBtns.forEach(b => {
+                    b.classList.remove('active', 'border-chaman-gold', 'bg-chaman-gold', 'text-chaman-dark');
+                    b.classList.add('border-white/10', 'bg-white/5', 'text-gray-300');
+                });
+                btn.classList.add('active', 'border-chaman-gold', 'bg-chaman-gold', 'text-chaman-dark');
+                btn.classList.remove('border-white/10', 'bg-white/5', 'text-gray-300');
+
+                selectedServiceKey = btn.getAttribute('data-service');
+                updateCalculator();
+            });
+        });
+
+        // Frequency Select Listeners
+        freqBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                freqBtns.forEach(b => {
+                    b.classList.remove('active', 'border-chaman-gold', 'bg-chaman-gold', 'text-chaman-dark');
+                    b.classList.add('border-white/10', 'bg-white/5', 'text-gray-300');
+                });
+                btn.classList.add('active', 'border-chaman-gold', 'bg-chaman-gold', 'text-chaman-dark');
+                btn.classList.remove('border-white/10', 'bg-white/5', 'text-gray-300');
+
+                selectedFreqKey = parseInt(btn.getAttribute('data-freq'));
+                updateCalculator();
+            });
+        });
+
+        // Initialize Calculator Default State
+        updateCalculator();
+    </script>
+</body>
+</html>
